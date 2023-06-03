@@ -11,6 +11,7 @@
 		7DDCE8B22A2B3819002F231E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDCE8B12A2B3819002F231E /* ContentView.swift */; };
 		7DDCE8B42A2B381B002F231E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DDCE8B32A2B381B002F231E /* Assets.xcassets */; };
 		7DDCE8B72A2B381B002F231E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DDCE8B62A2B381B002F231E /* Preview Assets.xcassets */; };
+		7DDCE8C22A2B490B002F231E /* Orbitron.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DDCE8C12A2B490B002F231E /* Orbitron.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,8 @@
 		7DDCE8B12A2B3819002F231E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7DDCE8B32A2B381B002F231E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DDCE8B62A2B381B002F231E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7DDCE8BF2A2B48B4002F231E /* Converter-Currency-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Converter-Currency-Info.plist"; sourceTree = SOURCE_ROOT; };
+		7DDCE8C12A2B490B002F231E /* Orbitron.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Orbitron.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +54,10 @@
 		7DDCE8AE2A2B3819002F231E /* Converter Currency */ = {
 			isa = PBXGroup;
 			children = (
+				7DDCE8BF2A2B48B4002F231E /* Converter-Currency-Info.plist */,
 				7DDCE8AF2A2B3819002F231E /* Converter_CurrencyApp.swift */,
 				7DDCE8B12A2B3819002F231E /* ContentView.swift */,
+				7DDCE8C12A2B490B002F231E /* Orbitron.ttf */,
 				7DDCE8B32A2B381B002F231E /* Assets.xcassets */,
 				7DDCE8B52A2B381B002F231E /* Preview Content */,
 			);
@@ -127,6 +132,7 @@
 			files = (
 				7DDCE8B72A2B381B002F231E /* Preview Assets.xcassets in Resources */,
 				7DDCE8B42A2B381B002F231E /* Assets.xcassets in Resources */,
+				7DDCE8C22A2B490B002F231E /* Orbitron.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +276,7 @@
 				DEVELOPMENT_TEAM = H4S3SP6C3B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Converter-Currency-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = CurrencyX;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -303,6 +310,7 @@
 				DEVELOPMENT_TEAM = H4S3SP6C3B;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Converter-Currency-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = CurrencyX;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

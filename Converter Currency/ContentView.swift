@@ -6,12 +6,91 @@
 //
 
 import SwiftUI
-
+import Combine
 struct ContentView: View {
+    @State private var secondnumber = ""
+    @State private var twotex = ""
+    @State private var currency: String = "$"
+    @State private var currency1: String = "₸"
+    let currencies = ["$", "₸", "₴", "₽", "€"]
+    let currencies1 = ["$", "₸", "₴", "₽", "€"]
     var body: some View {
-      Text("Test")
-        
-        // Start project
+        ZStack {
+            
+            Color.black
+                .ignoresSafeArea()
+                .overlay (
+                    
+                    VStack {
+                        Text("Converter")
+                            .font(.custom("Orbitron", size: 45))
+                            .offset(x:-19 ,y: -340)
+                            .ignoresSafeArea()
+                            .padding(10)
+                            .foregroundColor(.white)
+                        
+                        
+                        Text("The current course right now!")
+                            .font(.caption)
+                            .offset(y: -350)
+                            .foregroundColor(.white)
+                        
+                        
+                    }
+                )
+            // zstack чтобы не конфликтовать с ConverterX надписью
+            ZStack{
+                // буква Х рядом с Converter
+                Text("X")
+                    .font(.custom("Orbitron", size: 60))
+                    .ignoresSafeArea()
+                    .foregroundColor(.green)
+                    .offset(x:120,y: -350)
+                // текст файлд
+                TextField("", text: $secondnumber)
+                
+                    .textFieldStyle(.roundedBorder)
+                    .font(.largeTitle)
+                
+                    .offset(x: -65, y: -90)
+                    .frame(width: 210, height: 120)
+                
+                
+                    .keyboardType(.numberPad)
+                    .onReceive(Just(secondnumber)) { newValue in
+                        let filtered = newValue.filter { "0123456789".contains($0) }
+                        if filtered != newValue {
+                            self.secondnumber = filtered
+                        }
+                    }
+                TextField("", text: $twotex)
+                    .textFieldStyle(.roundedBorder)
+                    .font(.largeTitle)
+                    .frame(width: 210, height: 120)
+                    .offset(x: -65, y: -10)
+                // пикер валют пока не подключил
+                Picker("Currency", selection: $currency) {
+                    ForEach(currencies, id: \.self) { currency in
+                        Text(currency)
+                    }
+                }
+                .frame(width: 60,height: 60)
+                
+                .pickerStyle(.menu)
+                .background(.white)
+                .brightness(0.1)
+                .cornerRadius(12)
+                .accentColor(.green)
+                .padding()
+                .offset(x:80,y: -91)
+                
+                
+                    
+                
+                
+            }
+            
+        }
     }
 }
 
