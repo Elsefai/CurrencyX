@@ -54,8 +54,8 @@ struct ContentView: View {
                 
                     .offset(x: -65, y: -90)
                     .frame(width: 210, height: 120)
-                
-                
+                    .colorMultiply(.white)
+                    .brightness(-0.1)
                     .keyboardType(.numberPad)
                     .onReceive(Just(secondnumber)) { newValue in
                         let filtered = newValue.filter { "0123456789".contains($0) }
@@ -63,11 +63,37 @@ struct ContentView: View {
                             self.secondnumber = filtered
                         }
                     }
+                // второй текстфиелд куда будет выводиться
                 TextField("", text: $twotex)
                     .textFieldStyle(.roundedBorder)
                     .font(.largeTitle)
+                    .colorMultiply(.white)
+                    .brightness(-0.1)
                     .frame(width: 210, height: 120)
                     .offset(x: -65, y: -10)
+                    .keyboardType(.numberPad)
+                    .onReceive(Just(twotex)) { newValue in
+                        let filtered = newValue.filter { "0123456789".contains($0) }
+                        if filtered != newValue {
+                            self.twotex = filtered
+                        }
+                    }
+                    
+                // второй пикер
+                Picker("Currency", selection: $currency1) {
+                    ForEach(currencies1, id: \.self) { currency in
+                        Text(currency)
+                    }
+                }
+                .frame(width: 60,height: 60)
+                
+                .pickerStyle(.menu)
+                .background(.white)
+                .brightness(0.1)
+                .cornerRadius(12)
+                .accentColor(.green)
+                .padding()
+                .offset(x: 80, y: -10)
                 // пикер валют пока не подключил
                 Picker("Currency", selection: $currency) {
                     ForEach(currencies, id: \.self) { currency in
@@ -83,6 +109,15 @@ struct ContentView: View {
                 .accentColor(.green)
                 .padding()
                 .offset(x:80,y: -91)
+                
+                Button("Convert!") {
+                    
+                }
+                .buttonStyle(.borderedProminent)
+                .padding(.horizontal, 8)
+                .controlSize(.large)
+                .colorMultiply(.green)
+                .offset(y: 89)
                 
                 
                     
