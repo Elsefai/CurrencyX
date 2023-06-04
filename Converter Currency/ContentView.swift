@@ -16,7 +16,7 @@ struct ContentView: View {
     let currencies1 = ["$", "₸", "₴", "₽", "€"]
     var body: some View {
         ZStack {
-            
+            // some code
             Color.black
                 .ignoresSafeArea()
                 .overlay (
